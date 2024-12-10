@@ -41,7 +41,7 @@ header nav ul li {
 
     &:hover {
         color: darkgray;
-        transform: scale(1.2);
+        /* transform: scale(1.2); */
     }
 }
 
@@ -136,9 +136,9 @@ main img {
   }
 
 ::view-transition-old(root) {
-    animation: move-out 1s;
+    animation: 1s move-out
 }
 
 ::view-transition-new(root){
-    animation: move-in 1s;
+    animation: 1s move-in;
 }
