@@ -28,7 +28,7 @@ header nav ul {
 nav a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    /* font-weight: bold; nesting? */
 }
 
 nav a:hover {
@@ -39,22 +39,24 @@ header nav ul li {
     list-style-type: none;
     transition-duration: .5s;
 
-    &:hover {
+    :hover {
         color: darkgray;
-        /* transform: scale(1.2); */
+        transform: scale(1.2);
     }
 }
 
 button {
     background-color: gray;
     color: white;
+
 }
 
 button:hover {
     background-color: darkgray;
 }
 
-form {
+
+.filterKnoppen {
     position: fixed;
     bottom: 10%;
     left: 50%;
@@ -63,6 +65,10 @@ form {
 
 form button {
     align-items: center;
+}
+
+.schreeuwen {
+    text-transform: uppercase;
 }
 
 .inputBar {
@@ -87,7 +93,7 @@ form button {
     width: 100%;
 }
 
-main {
+#mainIndex {
     /* display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -117,28 +123,87 @@ main img {
 
 @keyframes move-out {
     from {
-      transform: translateY(0%);
+        transform: translateY(0%);
     }
-  
+
     to {
-      transform: translateY(-100%);
+        transform: translateY(-100%);
     }
-  }
-  
-  @keyframes move-in {
+}
+
+@keyframes move-in {
     from {
-      transform: translateY(100%);
+        transform: translateY(100%);
     }
-  
+
     to {
-      transform: translateY(0%);
+        transform: translateY(0%);
     }
-  }
+}
 
 ::view-transition-old(root) {
     animation: 1s move-out
 }
 
-::view-transition-new(root){
+::view-transition-new(root) {
     animation: 1s move-in;
 }
+
+.invulVeld {
+    position: fixed;
+    left: 50%;
+    top: 10em;
+    transform: translateX(-50%);
+}
+
+form button {
+    align-items: center;
+}
+
+fieldset {
+    appearance: none;
+    border: none;
+    margin: 1rem 0;
+}
+
+label {
+    display: grid;
+    cursor: inherit;
+    margin: 1rem 0;
+    position: relative;
+}
+
+label span {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    top: -1em;
+    left: 1em;
+    padding: 0.2em;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+option,
+select {
+    font-size: 1.2rem;
+    padding: 0.5em;
+    text-transform: none;
+    font-family: var(--primary-font);
+    color: var(--accent-color-grey);
+
+    appearance: none;
+    border: 1px solid black;
+    width: 20rem;
+}
+
+#mainTickets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+    flex-direction: column; 
+}
+
